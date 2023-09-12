@@ -1,0 +1,13 @@
+head 
+    title aula 3
+body
+    h1#tit1= title
+    p.data= message
+    p(style={color: 'red'}) Hoje é terça
+
+    ul 
+        each carro in carros
+            if carro == "Fiat"
+                li(style={color: 'green'})= carro
+            else
+                li= carro
