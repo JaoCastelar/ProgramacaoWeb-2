@@ -1,0 +1,48 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(216, 216, 216);
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    "top"
+    "cont";
+    grid-template-rows: 50px 2fr;
+    width: 100%;
+    height: 100vh;
+    font-family: arial;
+}
+
+.top {
+    display: flex;
+}
+.top {
+    grid-area: top;
+    background-color: rgb(48, 48, 48);
+    justify-content: space-between;
+}
+
+.cont {
+    grid-area: cont;
+    flex-direction: column;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.car {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+a {
+    width: 25%;
+}
+
+img { 
+    width: 100%;
+}

@@ -1,0 +1,53 @@
+head 
+    title= nome
+    
+style
+    include ./css/series.css
+body
+
+    div.container 
+        div.top
+            div.logo
+            div.menu
+                div.bot1
+                    a(href="/")
+                        button Home
+        div.cont
+        - var foto= fotoBg
+            div.cab(style="background-image: url('" + foto + "')")
+                div
+                    img(src= fotoPoster, alt="Poster série").capa
+                div.inf
+                    h1#tit= nome
+                    h2.subTit Temporadas: #{num_temporadas}
+                    h2.subTit Episódios: #{num_episodios}
+                    h3.rate Avaliação: #{nota}
+                    ul
+                        for i in elenco
+                            li #{i.nome} - #{i.personagem}
+                    h3.subTit Sinopse
+                    p.sinopse= resumo
+            div#index
+                ul.indice
+                    for i, k in temporadas
+                        a(href=`#temp${k}`) 
+                            li.tp Temporada - #{i.numero}
+            
+            div
+                ul
+                    for i, k in temporadas
+                        div.tempSep(id = `temp${k}`)
+                            img(src= i.poster, alt="Poster temporada").poster
+                            h2.subSubTit Temporada - #{i.numero}
+                        for j in i.episodios
+                            br
+                            li.ep Episódio - #{j.numero}
+                            p Nome: #{j.nome}
+                            p Nota: #{j.nota}
+                            p Sinopse: #{j.resumo}
+    
+            div#back-to-top-container
+                button#back-to-top Voltar ao Topo
+    script 
+        include ./js/scroll.js
+        include ./js/top.js

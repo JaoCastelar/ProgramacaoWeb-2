@@ -1,0 +1,16 @@
+head 
+    title= nome
+    
+style
+    include ./css/index.css
+body
+
+    div.container 
+        div.top
+        div.cont
+            h1 Séries
+            div.car
+                for i, k in fotos 
+                    a(href= links[k]) 
+                        img(src= i, alt="Poster")
+        
